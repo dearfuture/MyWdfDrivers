@@ -1,0 +1,91 @@
+;
+; KMDF_PNP.inf
+;
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=Sample ; TODO: edit Class
+ClassGuid={78A1C341-4539-11d3-B88D-00C04FAD5171} ; TODO: edit ClassGuid
+Provider=%ManufacturerName%
+CatalogFile=KMDF_PNP.cat
+DriverVer=11/14/2018,22.12.9.237
+
+[DestinationDirs]
+DefaultDestDir = 12
+
+; ================= Class section =====================
+
+[ClassInstall32]
+Addreg=SampleClassReg
+
+[SampleClassReg]
+HKR,,,0,%ClassName%
+HKR,,Icon,,-5
+
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+[SourceDisksFiles]
+KMDF_PNP.sys  = 1,,
+
+;*****************************************
+; Install Section
+;*****************************************
+
+[Manufacturer]
+%ManufacturerName%=Standard,NTamd64
+
+[Standard.NTamd64]
+%KMDF_PNP.DeviceDesc%=KMDF_PNP_Device, Root\KMDF_PNP ; TODO: edit hw-id
+
+[KMDF_PNP_Device.NT]
+CopyFiles=Drivers_Dir
+
+[Drivers_Dir]
+KMDF_PNP.sys
+
+;-------------- Service installation
+[KMDF_PNP_Device.NT.Services]
+AddService = KMDF_PNP,%SPSVCINST_ASSOCSERVICE%, KMDF_PNP_Service_Inst
+
+; -------------- KMDF_PNP driver install sections
+[KMDF_PNP_Service_Inst]
+DisplayName    = %KMDF_PNP.SVCDESC%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 3               ; SERVICE_DEMAND_START
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %12%\KMDF_PNP.sys
+LoadOrderGroup = Extended Base
+
+;
+;--- KMDF_PNP_Device Coinstaller installation ------
+;
+
+[DestinationDirs]
+KMDF_PNP_Device_CoInstaller_CopyFiles = 11
+
+[KMDF_PNP_Device.NT.CoInstallers]
+AddReg=KMDF_PNP_Device_CoInstaller_AddReg
+CopyFiles=KMDF_PNP_Device_CoInstaller_CopyFiles
+
+[KMDF_PNP_Device_CoInstaller_AddReg]
+HKR,,CoInstallers32,0x00010000, "WdfCoInstaller01009.dll,WdfCoInstaller"
+
+[KMDF_PNP_Device_CoInstaller_CopyFiles]
+WdfCoInstaller01009.dll
+
+[SourceDisksFiles]
+WdfCoInstaller01009.dll=1 ; make sure the number matches with SourceDisksNames
+
+[KMDF_PNP_Device.NT.Wdf]
+KmdfService =  KMDF_PNP, KMDF_PNP_wdfsect
+[KMDF_PNP_wdfsect]
+KmdfLibraryVersion = 1.9
+
+[Strings]
+SPSVCINST_ASSOCSERVICE= 0x00000002
+ManufacturerName="masm6432" ; TODO: add ManufacturerName
+ClassName="Samples" ; TODO: edit ClassName
+DiskName = "KMDF_PNP Installation Disk"
+KMDF_PNP.DeviceDesc = "KMDF_PNP Device"
+KMDF_PNP.SVCDESC = "KMDF_PNP Service"

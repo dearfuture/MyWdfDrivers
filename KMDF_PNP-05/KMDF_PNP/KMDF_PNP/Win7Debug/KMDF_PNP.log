@@ -1,0 +1,26 @@
+﻿生成启动时间为 2018/11/15 20:48:37。
+     1>项目“C:\Users\Administrator\documents\visual studio 2013\Projects\KMDF_PNP\KMDF_PNP\KMDF_PNP.vcxproj”在节点 2 上(Rebuild 个目标)。
+     1>StampInf:
+         C:\Program Files (x86)\Windows Kits\8.1\bin\x86\stampinf.exe -d "*" -a "x86" -v "*" -k "1.9" -u "1.11.0" -f Win7Debug\KMDF_PNP.inf 
+         Stamping Win7Debug\KMDF_PNP.inf [Version] section with DriverVer=11/15/2018,20.48.37.130
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /IWin7Debug\ /Zi /nologo /W3 /WX /Od /Oi /Oy- /D _X86_=1 /D i386=1 /D STD_CALL /D DEPRECATE_DDK_FUNCTIONS=1 /D MSC_NOOPT /D _WIN32_WINNT=0x0601 /D WINVER=0x0601 /D WINNT=1 /D NTDDI_VERSION=0x06010000 /D DBG=1 /D KMDF_VERSION_MAJOR=1 /D KMDF_VERSION_MINOR=9 /GF /Gm- /Zp8 /GS /Gy /fp:precise /Zc:wchar_t- /Zc:forScope- /GR- /Fo"Win7Debug\\" /Fd"Win7Debug\vc120.pdb" /Gz /wd4748 /wd4603 /wd4627 /wd4986 /wd4987 /wd4996 /FI"C:\Program Files (x86)\Windows Kits\8.1\Include\Shared\warning.h" /analyze- /errorReport:prompt /kernel -cbstring /d1import_no_registry /d2AllowCompatibleILVersions /d2Zi+ Device.c Driver.c Queue.c
+         Device.c
+         Driver.c
+         Queue.c
+         正在生成代码...
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Administrator\documents\visual studio 2013\Projects\KMDF_PNP\Win7Debug\KMDF_PNP.sys" /VERSION:"6.3" /INCREMENTAL:NO /NOLOGO /WX /SECTION:"INIT,d" "C:\Program Files (x86)\Windows Kits\8.1\lib\win7\KM\x86\memcmp.lib" "C:\Program Files (x86)\Windows Kits\8.1\lib\win7\KM\x86\BufferOverflowK.lib" "C:\Program Files (x86)\Windows Kits\8.1\lib\win7\KM\x86\ntoskrnl.lib" "C:\Program Files (x86)\Windows Kits\8.1\lib\win7\KM\x86\hal.lib" "C:\Program Files (x86)\Windows Kits\8.1\lib\win7\KM\x86\wmilib.lib" "C:\Program Files (x86)\Windows Kits\8.1\lib\wdf\kmdf\x86\1.9\WdfLdr.lib" "C:\Program Files (x86)\Windows Kits\8.1\lib\wdf\kmdf\x86\1.9\WdfDriverEntry.lib" /NODEFAULTLIB /MANIFEST:NO /DEBUG /PDB:"C:\Users\Administrator\documents\visual studio 2013\Projects\KMDF_PNP\Win7Debug\KMDF_PNP.pdb" /SUBSYSTEM:NATIVE,"6.01" /Driver /OPT:REF /OPT:ICF /ENTRY:"FxDriverEntry@8" /RELEASE /IMPLIB:"C:\Users\Administrator\documents\visual studio 2013\Projects\KMDF_PNP\Win7Debug\KMDF_PNP.lib" /MERGE:"_TEXT=.text;_PAGE=PAGE" /MACHINE:X86 /PROFILE /kernel /IGNORE:4198,4010,4037,4039,4065,4070,4078,4087,4089,4221 /osversion:6.3 /pdbcompress /debugtype:pdata Win7Debug\Device.obj
+         Win7Debug\Driver.obj
+         Win7Debug\Queue.obj
+         KMDF_PNP.vcxproj -> C:\Users\Administrator\documents\visual studio 2013\Projects\KMDF_PNP\Win7Debug\KMDF_PNP.sys
+       DriverTestSign:
+         C:\Program Files (x86)\Windows Kits\8.1\bin\x86\signtool.exe sign /ph /sha1 "BA7F6629BF02A612739C7375F5FD28B6D0CF19E1" 
+         Done Adding Additional Store
+         Successfully signed: C:\Users\Administrator\documents\visual studio 2013\Projects\KMDF_PNP\Win7Debug\KMDF_PNP.sys
+         
+     1>已完成生成项目“C:\Users\Administrator\documents\visual studio 2013\Projects\KMDF_PNP\KMDF_PNP\KMDF_PNP.vcxproj”(Rebuild 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:01.48

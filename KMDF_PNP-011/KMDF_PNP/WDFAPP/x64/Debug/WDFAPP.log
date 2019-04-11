@@ -1,0 +1,8 @@
+﻿生成启动时间为 2018/11/14 21:31:02。
+     1>项目“C:\Users\Administrator\documents\visual studio 2013\Projects\KMDF_PNP\WDFAPP\WDFAPP.vcxproj”在节点 2 上(Deploy 个目标)。
+     1>C:\Users\Administrator\documents\visual studio 2013\Projects\KMDF_PNP\WDFAPP\WDFAPP.vcxproj : error MSB4057: 该项目中不存在目标“Deploy”。
+     1>已完成生成项目“C:\Users\Administrator\documents\visual studio 2013\Projects\KMDF_PNP\WDFAPP\WDFAPP.vcxproj”(Deploy 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:00
